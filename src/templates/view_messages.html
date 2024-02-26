@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View Messages</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="text.css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  <br/> 
+    <nav class="navbar navbar-inverse">
+      <div class="containerfluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Military Communication</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li ><a href="/">Home</a></li>
+          <li><a href="/add_commander">Sign up</a></li>
+          <li class="active"><a href="/login">Login</a></li>
+          <li><a href="/send_message">Send Message</a></li>
+          <li><a href="/send_files">Send File</a></li>
+          <li><a href="/view_messages">View Messages</a></li>
+          <li><a href="/view_files">View Files</a></li>
+        </ul>
+      </div>
+      </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+<body>
+    <h1>View Messages</h1>
+    <ul>
+        {% for message, from_address, to_address in zip(messages, from_addresses, to_addresses) %}
+            <li><b>From:</b> {{ from_address }}, <b>To:</b> {{ to_address }}, <b>Message:</b> {{ message }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
