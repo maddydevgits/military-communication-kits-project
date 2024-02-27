@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>View Messages</title>
+     
+    <title>View Files</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">                                  
    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="text.css">
@@ -19,26 +20,35 @@
           <a class="navbar-brand" href="#">Military Communication</a>
         </div>
         <ul class="nav navbar-nav">
-          <li ><a href="/">Home</a></li>
-          <li><a href="/add_commander">Sign up</a></li>
-          <li class="active"><a href="/login">Login</a></li>
-          <li><a href="/send_message">Send Message</a></li>
-          <li><a href="/send_files">Send File</a></li>
-          <li><a href="/view_messages">View Messages</a></li>
-          <li><a href="/view_files">View Files</a></li>
+          <li><a href="/dashboard">Home</a></li>
+          <li><a href="/dashboard">Send Message</a></li>
+          <li><a href="/sendFile">Send File</a></li>
+          <li><a href="/viewFiles">View Files</a></li>
+          <li class="active"><a href="/viewMessages">View Messages</a></li>
+          <li><a href="/logout">Logout</a></li>
         </ul>
       </div>
       </nav>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
-<body>
-    <h1>View Messages</h1>
-    <ul>
-        {% for message, from_address, to_address in zip(messages, from_addresses, to_addresses) %}
-            <li><b>From:</b> {{ from_address }}, <b>To:</b> {{ to_address }}, <b>Message:</b> {{ message }}</li>
-        {% endfor %}
-    </ul>
-</body>
+   
+    <div class="container col-sm-12">
+      <h1>View Files</h1> <br/>
+      <table class="table">
+        <tr>
+          <th>S.No</th>
+          <th>From Wallet Address</th>
+          <th>From Name</th>
+          <th>Message</th>
+        </tr>
+        {%for i in range(l)%}
+          <tr>
+            <td>{{i+1}}</td>
+            <td>{{dashboard_data[i][0]}}</td>
+            <td>{{dashboard_data[i][1]}}</td>
+            <td>{{dashboard_data[i][2]}}</td>
+          </tr>
+        {%endfor%}
+      </table>
+    </div>  
 </html>

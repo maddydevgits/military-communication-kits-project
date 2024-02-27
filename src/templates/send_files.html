@@ -21,13 +21,12 @@
         <a class="navbar-brand" href="#">Military Communication</a>
       </div>
       <ul class="nav navbar-nav">
-        <li "><a href="/">Home</a></li>
-        <li><a href="/add_commander">Sign up</a></li>
-        <li><a href="/login">Login</a></li>
-        <li ><a href="/send_message">Send Message</a></li>
-        <li class="active"><a href="/send_files">Send File</a></li>
-        <li><a href="/view_messages">View Messages</a></li>
-        <li><a href="/view_files">View Files</a></li>
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/dashboard">Send Message</a></li>
+        <li class="active"><a href="/sendFile">Send File</a></li>
+        <li><a href="/viewFiles">View Files</a></li>
+        <li><a href="/viewMessages">View Messages</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
     </nav>
@@ -35,17 +34,17 @@
     <div class="container">
         <h2>Send Files</h2>
         <div>
-            <label for="walletAddress">Your Wallet Address:</label>
-            <input type="text" id="walletAddress" class="form-control">
-            
-            <br>
-            <label for="toAddresses">To Addresses (comma-separated):</label>
-            <input type="text" id="toAddresses" class="form-control">
-            <br>
-            <label for="fileHash">File Hash:</label>
-            <input type="text" id="fileHash" class="form-control">
-            <br>
-            <button onclick="sendFiles()" class="btn btn-info">Send Files</button>
+            <form action="sendFileForm" method="post">
+              <label for="toAddresses">To Address:</label>
+              <input type="text" name="toAddress" class="form-control">
+              <br>
+              <label for="fileHash">File Hash:</label>
+              <input type="text" name="fileHash" class="form-control">
+              <br>
+              <button type="submit" class="btn btn-info">Send Files</button>
+              <br/>
+              <span style="color:blue">{{res}}</span>
+            </form>
         </div>
     </div>
     

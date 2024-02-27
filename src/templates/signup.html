@@ -20,12 +20,12 @@
       </div>
       <ul class="nav navbar-nav">
         <li ><a href="/">Home</a></li>
-        <li class="active"><a href="/add_commander">Sign up</a></li>
-        <li><a href="/login">Login</a></li>
+        <li class="active"><a href="/signup">Sign up</a></li>
+        <!-- <li><a href="/login">Login</a></li>
         <li><a href="/send_message">Send Message</a></li>
         <li><a href="/send_files">Send File </a></li>
         <li><a href="/view_messages">View Messages</a></li>
-        <li><a href="/view_files">View Files</a></li>
+        <li><a href="/view_files">View Files</a></li> -->
     
       </ul>
     </div>
@@ -40,17 +40,22 @@
   
 <div class="container">
   <h2>Add commander</h2>
+  <h3 style="color:red">Only Admin has to create</h3> <br/>
+
 <div>
-    <label for="walletAddress">Wallet Address:</label>
-    <input type="text" id="walletAddress" class="form-control">
-    <br>
-    <label for="commanderName">Commander Name:</label>
-    <input type="text" id="commanderName" class="form-control">
-    <br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" class="form-control">
-    <br>
-    <button onclick="signup()" class="btn btn-danger">Signup</button>
+    <form action="/signupForm" method="post">
+      <label for="walletAddress">Wallet Address:</label>
+      <input type="text" name="walletAddress" class="form-control">
+      <br>
+      <label for="commanderName">Commander Name:</label>
+      <input type="text" name="commanderName" class="form-control">
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" class="form-control">
+      <br>
+      <button type="submit" class="btn btn-danger">Signup</button> <br/> 
+      <span style="color:green">{{res}}</span>
+    </form>
 </div>
 </div>
 

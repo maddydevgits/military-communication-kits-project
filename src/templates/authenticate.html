@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+    <title>View Files</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">                                  
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="text.css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  <br/> 
+    <nav class="navbar navbar-inverse">
+      <div class="containerfluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Military Communication</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/dashboard">Home</a></li>
+          <li><a href="/dashboard">Send Message</a></li>
+          <li><a href="/sendFile">Send File</a></li>
+          <li class="active"><a href="/viewFiles">View Files</a></li>
+          <li><a href="/viewMessages">View Messages</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+      </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <div class="container col-sm-12">
+      <h1>Authenticate Me</h1> <br/>
+      <form action="/authenticateForm" method="post">
+        <label>Authenticate Token:</label> <br/>
+        <input type="text" name="authToken" class="form-control" /> <br/>
+        <button type="submit" class="btn btn-danger">Authenticate Me</button>
+
+      </form>
+      
+    </div>  
+    
+    
+
+</html>
